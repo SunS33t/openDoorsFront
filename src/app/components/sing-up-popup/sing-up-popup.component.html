@@ -1,0 +1,15 @@
+<div class="popup" id="popup">
+    <a href="#" class="popup-area"(click) = "registrForm.reset()" ></a>
+    <div class="popup-body">
+        <div class="popup-content">
+        <a href="#" class="popup-close" (click) = "registrForm.reset()">x</a>
+        <div class="popup-title">Insert data</div>   
+        <form name="registrForm" #registrForm>  
+            <p>E-mail: <input class="text-field" #Email  type="text" name = "email"></p>
+           <p>Login: <input class="text-field"  #logIn type="text" name = "login"></p>
+           <p>Password: <input class="text-field" #pass  type="password" name = "password"></p>
+           <button (click)="getToken(Email.value,logIn.value,pass.value); registrForm.reset()" id="submitBtn">Subm<span style="color: crimson;">it</span></button>
+        </form>   
+        </div>
+    </div>
+</div>
