@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Form, FormControlName, FormGroup } from '@angular/forms';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -15,23 +16,24 @@ export class SingUpPopupComponent implements OnInit {
 
   }
   
-  async getToken(email:string,login:string,pass:string){  
+   getToken(email:string,login:string,pass:string){  
       let user = {
         Email: email,
         Login: login,
         Password: pass
       };
-      //alert(`email: ${user.Email} \nlogin: ${user.Login} \npassword: ${user.Password}`)
-      let response = await fetch('https://localhost:44329/gettoken', {
+      fetch('https://localhost:44320/gettoken', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json;charset=utf-8'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
-      });
-      let result = await response.json();
-        alert(result.message);
-        document.cookie = `access_token = [${result.message}]`;
+      }).then(response => response.json().then(text => {
+         alert(text);
+         document.cookie = `access_token = [${text}]`;
+        })
+      )
+      .catch(error => console.error('Unable to add item.', error));
       }
  
 }
