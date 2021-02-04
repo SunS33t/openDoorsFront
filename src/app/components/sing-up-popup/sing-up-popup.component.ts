@@ -16,6 +16,7 @@ export class SingUpPopupComponent implements OnInit {
   }
   
   async getToken(email:string,login:string,pass:string){  
+    //пиздец до трех сидели
       let user = {
         Email: email,
         Login: login,
