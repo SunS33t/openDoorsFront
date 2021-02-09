@@ -9,10 +9,15 @@ import { Form, FormControlName, FormGroup } from '@angular/forms';
 })
 export class SingUpPopupComponent implements OnInit {
 
+  public emailVisible:boolean = true;
+
   constructor() { }
 
   ngOnInit(): void { 
+  }
 
+  changeEmailVisible(value:boolean){
+    this.emailVisible = value;
   }
   
   async getToken(email:string,login:string,pass:string){  

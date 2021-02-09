@@ -4,7 +4,7 @@
         <div class="popup-content">
         <a href="#" class="popup-close" (click) = "registrForm.reset()">x</a>
        <label class = "clearfix" for="toggle">
-        <input class="input" type="checkbox" id ="toggle" >
+        <input class="input" type="checkbox" id ="toggle" checked #signToggle (change)="changeEmailVisible(signToggle.checked)" >
             <div class="toggle-wrapper">
                 <span class="selector">                   
                 </span>
@@ -16,7 +16,7 @@
             
         </label> 
         <form name="registrForm" #registrForm>  
-            <p>E-mail: <input class="text-field" #Email  type="text" name = "email"></p>
+            <p [class.hide] = "emailVisible" >E-mail: <input class="text-field" #Email  type="text" name = "email"></p>
            <p>Login: <input class="text-field"  #logIn type="text" name = "login"></p>
            <p>Password: <input class="text-field" #pass  type="password" name = "password"></p>
            <button (click)="getToken(Email.value,logIn.value,pass.value); registrForm.reset()" id="submitBtn">Subm<span style="color: crimson;">it</span></button>
