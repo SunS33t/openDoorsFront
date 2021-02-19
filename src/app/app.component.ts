@@ -7,5 +7,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-
+  visibility=false;
+  changeVisibility(){
+    this.visibility=!this.visibility;
+  }
 }

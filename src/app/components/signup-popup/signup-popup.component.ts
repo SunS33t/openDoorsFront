@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit,EventEmitter, Input,Output } from '@angular/core'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 
 @Component({
@@ -7,9 +7,15 @@ import axios, { AxiosError, AxiosResponse } from 'axios'
   styleUrls: ['./signup-popup.component.less']
 })
 export class SignupPopupComponent implements OnInit {
+  @Output() resetPopupStateEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Input() popupVisible = false
   public emailVisible = true
 
   ngOnInit (): void {
+  }
+ 
+  changePopupVisibility():void{
+    this.popupVisible=!this.popupVisible;
   }
 
   changeEmailVisibility (value: boolean): void {

@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-<app-signup-btn></app-signup-btn>
-<app-signup-popup></app-signup-popup>
+<app-signup-btn (changePopupStateEvent)="changeVisibility()"></app-signup-btn>
+<app-signup-popup [popupVisible]="visibility" (resetPopupStateEvent)="changeVisibility()"></app-signup-popup>
 </body>
 </html>
