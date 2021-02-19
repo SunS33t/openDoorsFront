@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import {AxiosError, AxiosResponse } from 'axios'
+import axios from 'axios'
 
 @Component({
   selector: 'app-signup-popup',
@@ -15,22 +17,45 @@ export class SignupPopupComponent implements OnInit {
     this.emailVisible = value
   }
 
-  async getToken (email: string, login: string, pass: string): Promise<void> {
+  async getToken (login: string, pass: string): Promise<void> {
+
     const user = {
-      Email: email,
       Login: login,
       Password: pass
     }
-    const backendApi = 'https://localhost:44329'
-    const response = await fetch(backendApi + '/gettoken', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(user)
+    const backendApi = 'https://localhost:44320/'
+
+    axios.post(backendApi + '/gettoken', user)
+    .then(function (response: AxiosResponse){
+      document.cookie = `access_token = Bearer ${response.data}`
     })
-    const result = await response.json()
-    alert(result.message)
-    document.cookie = `access_token = [${result.message}]`
+    .catch(function (error:AxiosError) {
+      console.log(error);
+    })
+  }
+
+  async registration (email: string, login: string, pass: string): Promise<void> {
+
+    const user = {
+      Name: login,
+      Password: pass
+    }
+    const backendApi = 'https://localhost:44320/'
+
+    axios.post(backendApi + '/registration', user)
+    .then(function (response: AxiosResponse){
+      if(response.status == 200)
+        document.cookie = `access_token = Bearer ${response.data}`
+    })
+    .catch(function (error:AxiosError) {
+      console.log(error);
+    })
+  }
+
+  onSubmitClick(email: string, login: string, pass: string):void{
+    if(this.emailVisible)
+      this.getToken(login,pass);
+    else
+      this.registration(email,login,pass);
   }
 }

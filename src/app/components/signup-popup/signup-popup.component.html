@@ -19,7 +19,7 @@
             <p [class.hide] = "emailVisible" >E-mail: <input class="text-field" #Email  type="text" name = "email"></p>
            <p>Login: <input class="text-field"  #logIn type="text" name = "login"></p>
            <p>Password: <input class="text-field" #pass  type="password" name = "password"></p>
-           <button (click)="getToken(Email.value,logIn.value,pass.value); registrForm.reset()" id="submitBtn">Subm<span style="color: crimson;">it</span></button>
+           <button (click)="onSubmitClick(Email.value,logIn.value,pass.value); registrForm.reset();" id="submitBtn">Subm<span style="color: crimson;">it</span></button>
         </form>   
         </div>
     </div>
