@@ -22,7 +22,7 @@ export class SignupPopupComponent implements OnInit {
     this.emailVisible = value
   }
 
-  async getToken (login: string, pass: string): Promise<void> {
+  async getToken (login: string, pass: string,email:string="" ): Promise<void> {
 
     const user = {
       Login: login,
