@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import {AxiosError, AxiosResponse } from 'axios'
-import axios from 'axios'
+import axios, { AxiosError, AxiosResponse } from 'axios'
 
 @Component({
   selector: 'app-signup-popup',
@@ -26,12 +25,12 @@ export class SignupPopupComponent implements OnInit {
     const backendApi = 'https://localhost:44320/'
 
     axios.post(backendApi + '/gettoken', user)
-    .then(function (response: AxiosResponse){
-      document.cookie = `access_token = Bearer ${response.data}`
-    })
-    .catch(function (error:AxiosError) {
-      console.log(error);
-    })
+      .then(function (response: AxiosResponse) {
+        document.cookie = `access_token = Bearer ${response.data}`
+      })
+      .catch(function (error: AxiosError) {
+        console.log(error)
+      })
   }
 
   async registration (email: string, login: string, pass: string): Promise<void> {
@@ -43,19 +42,19 @@ export class SignupPopupComponent implements OnInit {
     const backendApi = 'https://localhost:44320/'
 
     axios.post(backendApi + '/registration', user)
-    .then(function (response: AxiosResponse){
-      if(response.status == 200)
-        document.cookie = `access_token = Bearer ${response.data}`
-    })
-    .catch(function (error:AxiosError) {
-      console.log(error);
-    })
+      .then(function (response: AxiosResponse) {
+        if (response.status == 200)
+          document.cookie = `access_token = Bearer ${response.data}`
+      })
+      .catch(function (error: AxiosError) {
+        console.log(error)
+      })
   }
 
-  onSubmitClick(email: string, login: string, pass: string):void{
-    if(this.emailVisible)
-      this.getToken(login,pass);
+  onSubmitClick (email: string, login: string, pass: string): void {
+    if (this.emailVisible)
+      this.getToken(login, pass)
     else
-      this.registration(email,login,pass);
+      this.registration(email, login, pass)
   }
 }
