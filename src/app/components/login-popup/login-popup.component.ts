@@ -1,28 +1,23 @@
-import { Component, OnInit,EventEmitter, Input,Output } from '@angular/core'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 
 @Component({
-  selector: 'app-signup-popup',
-  templateUrl: './signup-popup.component.html',
-  styleUrls: ['./signup-popup.component.less']
+  selector: 'login-popup',
+  templateUrl: './login-popup.component.html',
+  styleUrls: ['./login-popup.component.less']
 })
-export class SignupPopupComponent implements OnInit {
-  @Output() resetPopupStateEvent: EventEmitter<any> = new EventEmitter<any>();
-  @Input() popupVisible = false
+export class LoginPopupComponent implements OnInit {
+  @Output() resetPopupStateEvent: EventEmitter<any> = new EventEmitter<any>()
   public emailVisible = true
 
   ngOnInit (): void {
-  }
- 
-  changePopupVisibility():void{
-    this.popupVisible=!this.popupVisible;
   }
 
   changeEmailVisibility (value: boolean): void {
     this.emailVisible = value
   }
 
-  async getToken (login: string, pass: string,email:string="" ): Promise<void> {
+  async getToken (login: string, pass: string, email: string = ''): Promise<void> {
 
     const user = {
       Login: login,

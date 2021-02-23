@@ -6,9 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
   styleUrls: ['./app.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  visibility=false;
-  changeVisibility(){
-    this.visibility=!this.visibility;
-  }
-}
+export class AppComponent {}

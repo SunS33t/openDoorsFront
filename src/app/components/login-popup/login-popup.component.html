@@ -1,0 +1,25 @@
+<div class="popup" id="popup">
+    <a class="popup-area" (click)="registerForm.reset(); resetPopupStateEvent.emit()"></a>
+    <div class="popup-body">
+        <div class="popup-content">
+            <a class="popup-close" (click)="registerForm.reset(); resetPopupStateEvent.emit()">x</a>
+            <label class="clearfix" for="toggle">
+                <input class="input" type="checkbox" id="toggle" checked #signToggle (change)="changeEmailVisibility(signToggle.checked)">
+                <div class="toggle-wrapper">
+                <span class="selector">                   
+                </span>
+                </div>
+                <p class="notification">
+                <span class="selected">
+                </span>
+            </p>            
+        </label>
+            <form name="registrForm" #registerForm>
+                <p [class.hide]="emailVisible">E-mail: <input class="text-field" #Email type="text" name="email"></p>
+                <p>Login: <input class="text-field" #logIn type="text" name="login"></p>
+                <p>Password: <input class="text-field" #pass type="password" name="password"></p>
+                <button (click)="getToken(logIn.value,pass.value,Email.value); registerForm.reset(); resetPopupStateEvent.emit();" id="submitBtn">Subm<span style="color: crimson;">it</span></button>
+            </form>
+        </div>
+    </div>
+</div>
