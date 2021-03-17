@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./registration-view.component.less']
 })
 export class RegistrationViewComponent implements OnInit {
-  isRegistering = false
+  public loginPopupVisible = false
 
+  /**
+   * Изменения состояния видимости модального окна.
+   */
   changePopupState = (): void => {
-    this.isRegistering = !this.isRegistering
+    this.loginPopupVisible = !this.loginPopupVisible
   }
 
   ngOnInit (): void {

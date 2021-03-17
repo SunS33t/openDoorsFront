@@ -1,2 +1,5 @@
+<div style="margin-top: 10px;"><span style="margin-left:10px"><a href=""><button href="#" type="button" class="btn btn-info">Back</button></a></span>
 <signup-switch-button (changePopupStateEvent)="changePopupState()"></signup-switch-button>
-<login-popup *ngIf="isRegistering" (resetPopupStateEvent)="changePopupState()"></login-popup>
+</div>
+<login-popup *ngIf="loginPopupVisible" (resetPopupStateEvent)="changePopupState()"></login-popup>
+

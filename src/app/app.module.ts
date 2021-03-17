@@ -8,9 +8,10 @@ import { SignupSwitchButtonComponent } from './components/signup-switch-button/s
 import { LoginPopupComponent } from './components/login-popup/login-popup.component'
 import { RoomViewComponent } from './room-view/room-view.component'
 import { RegistrationViewComponent } from './registration-view/registration-view.component'
-import { WrapperComponent } from './wrapper/wrapper.component'
 import { ErrorComponent } from './error/error.component'
-import { ChatComponent } from './components/chat/chat.component'
+import { ChatComponent } from './components/chat/chat.component';
+import { WrapperComponent } from './wrapper/wrapper.component'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -19,14 +20,15 @@ import { ChatComponent } from './components/chat/chat.component'
     LoginPopupComponent,
     RoomViewComponent,
     RegistrationViewComponent,
-    WrapperComponent,
     ErrorComponent,
-    ChatComponent
+    ChatComponent,
+    WrapperComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
