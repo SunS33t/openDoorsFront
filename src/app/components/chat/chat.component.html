@@ -1,82 +1,53 @@
-
-        <div class="row rounded-lg overflow-hidden shadow">
-          <!-- Users box-->
-          <div class="col-5 px-0">
-            <div class="bg-white">
-      
-              <div class="bg-gray px-4 py-2 bg-light">
-                <p class="h5 mb-0 py-1">Recent</p>
-              </div>
-      
-              <div class="messages-box">
-                <div class="list-group rounded-0">
-                  <a id='room1' numberRoom="1" class="list-group-item list-group-item-action active text-white rounded-0" (click)='changeRoom("room1")'>
-                    <div class="media"><img src="https://sbis.perm.ru/wp-content/uploads/2020/03/number1_PNG14878.png" alt="user" width="50" class="rounded-circle">
-                      <div class="media-body ml-4">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                          <h6 class="mb-0">Room 1</h6>
-                        </div>
-                        <p class="font-italic mb-0 text-small">Общая комната.</p>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a id='room2' numberRoom="2" class="list-group-item list-group-item-action list-group-item-light rounded-0" (click)='changeRoom("room2")'>
-                    <div class="media"><img src="https://sbis.perm.ru/wp-content/uploads/2020/03/number1_PNG14878.png" alt="user" width="50" class="rounded-circle">
-                      <div class="media-body ml-4">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                          <h6 class="mb-0">Room 2</h6>
-                        </div>
-                        <p class="font-italic mb-0 text-small">Вторая общая комната.</p>
-                      </div>
-                    </div>
-                  </a>
-      
-                  <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
-                    <div class="media"><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
-                      <div class="media-body ml-4">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                          <h6 class="mb-0">Room 2</h6><small class="small font-weight-bold">14 Dec</small>
-                        </div>
-                        <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur. incididunt ut labore.</p>
-                      </div>
-                    </div>
-                  </a>
+<div class="row rounded-lg overflow-hidden shadow">
+  <div class="col-5 px-0">
+    <div class="bg-white">
+      <div class="bg-gray px-4 py-2 bg-light">
+        <p class="h5 mb-0 py-1">Room</p>
+      </div>
+      <div class="messages-box">
+        <div class="list-group rounded-0">
+          <a id='room1' numberRoom="1" class="list-group-item list-group-item-action active text-white rounded-0"
+            (click)='changeRoom("room1")'>
+            <div class="media"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN8AAADiCAMAAAD5w+JtAAAAmVBMVEX8/v85MTArISAzKyosIyI2Li0zKio5MDBvZGIxKCciFRT8//8tIyMxKSiknZuuqagnHBv49/fc2dkhFBRBODfx7+9oX16Oh4Z1bWwjGBdVS0ooHR0bCwo7Kie/u7vk4eGVjYyel5VEPDuBfX1RQ0DT1NTBvr5fVlWxrax+d3YgDgtLPDmPiopCMi/m5+dJQkIRAABeUU4wIB75RitfAAAE5ElEQVR4nO2daXOiShSGWUSFNsoSFNww44qOJPr/f9yAOokzoSZHorc5fd8nlS+pYJ2nuu2mt9OaBgAAAAAAAAAAAAAAAAAAAAD4rxGyA3gwnuwAHsqqb61XsoN4CHm99Ae227TMcVd2LHcnl8u6u8C29Bw7kh3Ofcnlwk1/a1gt/UTnRXZEd+Qs5xqm/o7Rkx3UHcl6a3fU1K9xlWhgin7Of9mNjT/lcuKl7Ni+S+EWTtNJ0LD+lstxEs59/Mlt9XPojOxWq8RO14OQoZ+4/GpZ7nZ07bKCuzBm944mzgF7y146id3SSnnFVnK0ZIS4iAnPX71E+3Fs2FZ5nbxmIjlsOl6YLae9QX/hBm7nX1XyGmsnO2wi/efWMYhHht0kFNqV31B24CREMraIJfYn5lp26DQ2RhW73K8tO3IaP+1qflyGD+1PL15Ev7nsyGksKn37+Pjtq/oNZEdOQ3W/9dht2OYtPd/FbyY7chqeP+3O15Nx7HZu6uAbM9mR38T51TN2yb0FM7/zG3a2Sl1if8HM70xumbw+0fy4Tp95P0gtKls/LdlSmhnG059zmyDIt/w036HUT7bLD0J7JnwD+frlQ3pTbb+U0Mtz9hso7tcjzFlw9psq7rdy1fZbxmr7UTp4xn4iU91P7e+fCI+K+6ndvwtP7fdr4elfC3L2owyQ4FdjCFNM8Ksxr/Bj7TeEX0dxP4Oz30Fxv/XXE6Cq+7FuX+CnNzhvnycsQLA+HgA/5esna7+24vUTfvCrM/CDX52BH/zqjPJ+X2/ihV+NgR/86ozq7SfmX3j7Uebn4VdfKOtjivuxnh9UvfwI+wuU9+O8Pqb6/hDVy4+wP4v1/hC195+pvj8Sfv8DP8bni2n7yzn7tRT3U738CIlEOjPZYVaGdn5lJjvMygiPcv5oJjvMypDOV3HJ31MCzY9J/qUSRNhQ3I9wvlF5Pyb53UpQ3o9yvpi1H+F8uJ3KDrMyND8m+TFLIPmZivs1meRvLSOhlF9fdpTV8Qn5Q7jkFy6Dkh/FOsiOsjokv4XsKKtDyd/DJn95CSS/vewoq0Pxa/HJr/+J6Yjgd5QdZXU2BD8+9z98hpSTnt/9He90SX4eW79Zh+DH8n6ZM5T8inqQsfWj5MfUHV92mJUh+TG+vyqipMBmfP8Y6c4Lxhu0CNs/GS+wCG1HyWDOdoJCeITp3XwA8Sw70Kr4AcWvNeLawZNer/MGlGsHQeoe2DYwwiPMvhRYzzzrJyX79YmYYw9PbD0Lmgt+Q0Ch9ekXkhkz2eHeTmTccElQwGkTU1HXlq+Uoe0Hbt/Xan8Z/CW80O8NnVtv6zLjdXcZXn1KnXgXW21eoh8d5/MlxV/TanbixnDQW9ZxOF9czbV3nNg1GmbFe9ZOWLYRx8Hk0E7nG9lO7wht+taxv+X1l6Vl2kadll1IFwHdRq2m7UnjWMZ+Ve+m/Ae1WhZ8gF+zPsvyQjvcv37WatBUOs9pFZgn7Cf7gyfbNJvFX0//0NLLm6bRVLbUFZu3OI7z7s85EQTBdnuc7HeLxfCw7rfbUZSm6fxCmkZR1G7314fhYrHbT47Odpw/ETgX4uIndt5qteqyLPD9JEmyMPRuD83zvDDMsvx53/dPH5Y8IszvIn5T9bmPJ+tUegAAAAAAAAAAAAAAAAAAAAAAAABQk1+9Wl28CcnQNAAAAABJRU5ErkJggg=="
+                alt="user" width="50" class="rounded-circle">
+              <div class="media-body ml-4">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <h6 class="mb-0">Room 1</h6>
                 </div>
+                <p class="font-italic mb-0 text-small">Общая комната.</p>
               </div>
             </div>
-          </div>
-          <!-- Chat Box-->
-          <div class="col-7 px-0">
-            <div id="messageBox" class="px-4 py-5 chat-box bg-white">
-      
-              <!-- Sender Message-->
-              <div class="media w-50 mb-3"><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
-                <div class="media-body ml-3">
-                  <div class="bg-light rounded py-2 px-3 mb-2">
-                    <p class="text-small mb-0 text-muted">Hello0</p>
-                  </div>
-                  <p class="small text-muted">12:00 PM | Aug 13</p>
+          </a>
+          <a id='room2' numberRoom="2" class="list-group-item list-group-item-action list-group-item-light rounded-0"
+            (click)='changeRoom("room2")'>
+            <div class="media"><img
+                src="data:image/png;base64,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"
+                alt="user" width="50" class="rounded-circle">
+              <div class="media-body ml-4">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <h6 class="mb-0">Room 2</h6>
                 </div>
-              </div>
-      
-              <!-- Reciever Message-->
-              <div class="media w-50 ml-auto mb-3">
-                <div class="media-body">
-                  <div class="bg-primary rounded py-2 px-3 mb-2">
-                    <p class="text-small mb-0 text-white">Hello1</p>
-                  </div>
-                  <p class="small text-muted">12:00 PM | Aug 13</p>
-                </div>
+                <p class="font-italic mb-0 text-small">Вторая общая комната.</p>
               </div>
             </div>
-      
-            <!-- Typing area -->
-            <form action="#" class="bg-light">
-              <div class="input-group" style="margin-bottom: 5px;">
-                <input #messageText type="text" placeholder="Type a message" class="form-control rounded-0 border-0 py-4 bg-light" (keydown.enter)="sendMessage(messageText.value)">
-                <button id="button-addon2"  type="button" class="btn btn-outline-dark" (click)="sendMessage(messageText.value)" style="margin-left: 5px;">Отправить</button>
-              </div>
-            </form>
-          </div>
+          </a>
         </div>
+      </div>
+    </div>
+  </div>
+  <!-- Chat Box-->
+  <div class="col-7 px-0">
+    <div id="messageBox" class="px-4 py-1 chat-box bg-white">
+    </div>
+    <!-- Typing area -->
+    <form action="#" class="bg-light">
+      <div class="input-group" style="margin-bottom: 5px;">
+        <input #messageText type="text" placeholder="Type a message"
+          class="form-control rounded-0 border-0 py-4 bg-light" (keydown.enter)="sendMessage(messageText.value)">
+        <button id="button-addon2" type="button" class="btn btn-outline-dark" (click)="sendMessage(messageText.value)"
+          style="margin-left: 5px;">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
