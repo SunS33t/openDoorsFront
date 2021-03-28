@@ -7,13 +7,11 @@ import { ErrorComponent } from './error/error.component'
 
 const routes: Routes = [
   { path: 'room', component: RoomViewComponent },
-  { path: 'registration', component: RegistrationViewComponent },
-  { path: '', component: WrapperComponent },
-  { path: '**', component: ErrorComponent }
+  { path: 'registration', component: RegistrationViewComponent }
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

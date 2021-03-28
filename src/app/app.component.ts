@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 
-export const backendHost:string = 'localhost:44315'
+export const backendHost: string = 'localhost:44315'
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,6 @@ export const backendHost:string = 'localhost:44315'
   styleUrls: ['./app.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {}
+export class AppComponent { 
+  public isNavbarCollapsed:boolean = true;
+}

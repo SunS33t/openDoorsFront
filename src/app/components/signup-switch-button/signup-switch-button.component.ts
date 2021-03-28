@@ -11,7 +11,7 @@ export class SignupSwitchButtonComponent implements OnInit {
    */
   @Output() changePopupStateEvent: EventEmitter<any> = new EventEmitter<any>()
 
-  ngOnInit (): void {
+  ngOnInit(): void {
 
   }
 
